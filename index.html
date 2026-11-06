@@ -93,8 +93,14 @@ footer{padding:20px 18px;color:#7a877d;font-size:13px;text-align:center}
 .sticky a.go2{flex:1;background:#0b6b3a;color:#fff;text-align:center;text-decoration:none;font-weight:800;padding:15px;border-radius:12px;font-size:16.5px}
 .sticky a.zl{flex:0 0 52px;background:#0068ff;color:#fff;text-align:center;text-decoration:none;font-size:22px;padding:12px 0;border-radius:12px}
 .note{font-size:12.5px;color:#8a968c;margin-top:8px}
+.heropoints{display:none}
 @media(min-width:900px){
- .wrap{max-width:1140px}
+ .wrap{max-width:none;width:100%}
+ .hero,.herogrid,.stats,section,footer{max-width:1400px;margin-left:auto;margin-right:auto;width:100%}
+ .chips{flex-wrap:wrap;overflow:visible;padding-right:18px}
+ .heropoints{display:block;margin:16px 18px 0;background:#f2f9f4;border:1px solid #d8ebde;border-radius:14px;padding:14px 16px}
+ .heropoints p{padding:5px 0 5px 26px;position:relative;font-size:15px}
+ .heropoints p:before{content:'✓';position:absolute;left:2px;color:#0b6b3a;font-weight:800}
  .hero{padding-top:30px}
  h1{font-size:35px}
  h2{font-size:24px}
@@ -113,7 +119,7 @@ footer{padding:20px 18px;color:#7a877d;font-size:13px;text-align:center}
  .ordercard{padding:26px 28px}
  .ordercard form{grid-template-columns:1fr 1fr}
  .ordercard form input[name=diachi],.ordercard form textarea,.ordercard form .totrow,.ordercard form button.go,.ordercard form .err,.ordercard form .toast,.ordercard form .note{grid-column:1/-1}
- .sticky{max-width:1140px;left:50%;transform:translateX(-50%);border-radius:16px 16px 0 0}
+ .sticky{max-width:1400px;left:50%;transform:translateX(-50%);border-radius:16px 16px 0 0}
 }
 </style></head><body><div class="wrap">
 <div class="topbar">🔥 XẢ KHO CUỐI NĂM — kết thúc sau <b id="cd">...</b></div>
@@ -125,7 +131,8 @@ footer{padding:20px 18px;color:#7a877d;font-size:13px;text-align:center}
 <div class="heroside"><div class="price"><span class="old">980.000đ</span><span class="new">499.000đ</span><span class="save">TIẾT KIỆM 49%</span></div>
 <a class="cta" href="#dathang">🛒 ĐẶT HÀNG — NHẬN HÀNG MỚI TRẢ TIỀN</a>
 <a class="cta2" href="#combo">Xem 4 combo ↓</a>
-<div class="chips"><span class="chip">🚚 Miễn phí ship đơn từ 500k</span><span class="chip">📦 Kiểm tra hàng trước khi trả tiền</span><span class="chip">💵 COD toàn quốc</span><span class="chip">🏭 Hàng chính hãng Soka</span></div></div></div>
+<div class="chips"><span class="chip">🚚 Miễn phí ship đơn từ 500k</span><span class="chip">📦 Kiểm tra hàng trước khi trả tiền</span><span class="chip">💵 COD toàn quốc</span><span class="chip">🏭 Hàng chính hãng Soka</span></div>
+<div class="heropoints"><p>Kem dưỡng ẩm Meso 30gr — dùng sáng và tối mỗi ngày</p><p>Viên sủi Vitamin C + Đông Trùng Hạ Thảo — mỗi tuýp dùng 20 ngày</p><p>Nhân viên xác nhận hạn dùng của lô hàng với bạn trước khi chốt đơn</p></div></div></div>
 <div class="stats">
 <div class="stat"><div class="n">288</div><div class="t">hộp Meso đã bán</div></div>
 <div class="stat"><div class="n">521</div><div class="t">tuýp Sủi đã bán</div></div>
