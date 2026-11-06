@@ -93,17 +93,39 @@ footer{padding:20px 18px;color:#7a877d;font-size:13px;text-align:center}
 .sticky a.go2{flex:1;background:#0b6b3a;color:#fff;text-align:center;text-decoration:none;font-weight:800;padding:15px;border-radius:12px;font-size:16.5px}
 .sticky a.zl{flex:0 0 52px;background:#0068ff;color:#fff;text-align:center;text-decoration:none;font-size:22px;padding:12px 0;border-radius:12px}
 .note{font-size:12.5px;color:#8a968c;margin-top:8px}
+@media(min-width:900px){
+ .wrap{max-width:1140px}
+ .hero{padding-top:30px}
+ h1{font-size:35px}
+ h2{font-size:24px}
+ section{padding:30px 28px 4px}
+ .herogrid{display:grid;grid-template-columns:1.02fr .98fr;gap:10px;align-items:start}
+ .heroimg{margin:16px 0 0 28px}
+ .heroside{padding-top:16px}
+ .heroside .price{justify-content:flex-start;padding-left:18px}
+ .stats{gap:12px;padding:18px 28px 2px}
+ .stat .n{font-size:26px}
+ .combos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+ .combos .combo{margin-bottom:0}
+ .vids figure{flex:0 0 31%}
+ .split{grid-template-columns:1fr 1fr}
+ .gal{grid-template-columns:repeat(6,1fr)}
+ .ordercard{padding:26px 28px}
+ .ordercard form{grid-template-columns:1fr 1fr}
+ .ordercard form input[name=diachi],.ordercard form textarea,.ordercard form .totrow,.ordercard form button.go,.ordercard form .err,.ordercard form .toast,.ordercard form .note{grid-column:1/-1}
+ .sticky{max-width:1140px;left:50%;transform:translateX(-50%);border-radius:16px 16px 0 0}
+}
 </style></head><body><div class="wrap">
 <div class="topbar">🔥 XẢ KHO CUỐI NĂM — kết thúc sau <b id="cd">...</b></div>
 <div class="hero"><span class="badge">SOKA U.S.A PHARMA — BÁN THU HỒI VỐN</span>
 <h1>Combo gia đình: <span class="hl">2 Meso + 6 tuýp Sủi</span> — 2 người dùng 60 ngày</h1>
 <div class="stars">★★★★★</div>
 <p class="rate"><b>4,8/5</b> từ <b>119 đánh giá</b> trên web Soka · Đã bán <b>288 hộp Meso</b> + <b>521 tuýp Sủi</b></p></div>
-<figure class="heroimg"><img src="img/hero.webp" alt="Combo Meso và viên sủi Soka" fetchpriority="high"></figure>
-<div class="price"><span class="old">1.960.000đ</span><span class="new">899.000đ</span><span class="save">TIẾT KIỆM 54%</span></div>
+<div class="herogrid"><figure class="heroimg"><img src="img/hero.webp" alt="Combo Meso và viên sủi Soka" fetchpriority="high"></figure>
+<div class="heroside"><div class="price"><span class="old">1.960.000đ</span><span class="new">899.000đ</span><span class="save">TIẾT KIỆM 54%</span></div>
 <a class="cta" href="#dathang">🛒 ĐẶT HÀNG — NHẬN HÀNG MỚI TRẢ TIỀN</a>
 <a class="cta2" href="#combo">Xem 4 combo ↓</a>
-<div class="chips"><span class="chip">🚚 Miễn phí ship đơn từ 500k</span><span class="chip">📦 Kiểm tra hàng trước khi trả tiền</span><span class="chip">💵 COD toàn quốc</span><span class="chip">🏭 Hàng chính hãng Soka</span></div>
+<div class="chips"><span class="chip">🚚 Miễn phí ship đơn từ 500k</span><span class="chip">📦 Kiểm tra hàng trước khi trả tiền</span><span class="chip">💵 COD toàn quốc</span><span class="chip">🏭 Hàng chính hãng Soka</span></div></div></div>
 <div class="stats">
 <div class="stat"><div class="n">288</div><div class="t">hộp Meso đã bán</div></div>
 <div class="stat"><div class="n">521</div><div class="t">tuýp Sủi đã bán</div></div>
@@ -111,7 +133,7 @@ footer{padding:20px 18px;color:#7a877d;font-size:13px;text-align:center}
 <div class="stat"><div class="n">4,8★</div><div class="t">điểm trung bình</div></div>
 </div>
 <section id="combo"><h2>Chọn combo của bạn</h2><p class="sub2">Chạm để chọn — giá ở form đặt hàng bên dưới tự cập nhật theo combo bạn chọn.</p>
-<label class="combo" data-combo="cb399"><input type="radio" name="combo" value="cb399">
+<div class="combos"><label class="combo" data-combo="cb399"><input type="radio" name="combo" value="cb399">
 <div class="r1"><span class="nm">Combo Khởi Đầu</span><span class="pr">399.000đ</span></div>
 <div class="ds">1 Meso + 1 tuýp Sủi</div><div class="od">790.000đ</div></label>
 <label class="combo" data-combo="cb499"><span class="tag">BÁN CHẠY NHẤT</span><input type="radio" name="combo" value="cb499">
@@ -122,7 +144,7 @@ footer{padding:20px 18px;color:#7a877d;font-size:13px;text-align:center}
 <div class="ds">2 Meso + 6 tuýp Sủi — 2 người dùng song song</div><div class="od">1.960.000đ</div></label>
 <label class="combo" data-combo="cb1299"><input type="radio" name="combo" value="cb1299">
 <div class="r1"><span class="nm">Combo Trọn Đợt</span><span class="pr">1.299.000đ</span></div>
-<div class="ds">3 Meso + 10 tuýp Sủi — mua một lần dùng dài</div><div class="od">3.035.000đ</div></label>
+<div class="ds">3 Meso + 10 tuýp Sủi — mua một lần dùng dài</div><div class="od">3.035.000đ</div></label></div>
 <p class="note">Lấy từ 10 hộp Meso cho spa / cửa hàng: gọi 0778 551 111 để có giá theo lô.</p></section>
 <section><h2>Xem sản phẩm thật</h2><p class="sub2">Video giới thiệu chính thức của từng sản phẩm trên web Soka.</p>
 <div class="vids">
