@@ -224,7 +224,7 @@ var COMBOS={
  cb899:{name:'Combo Gia Dinh 2 Meso + 6 Sui',label:'Combo Gia Đình',price:899000},
  cb1299:{name:'Combo Tron Dot 3 Meso + 10 Sui',label:'Combo Trọn Đợt',price:1299000}
 };
-var RECEIVER='';
+var RECEIVER='https://script.google.com/macros/s/AKfycbySLSxQiMtUbwrqNVGb6ZgFwb0IOdzr7EiSTeE1x-EEgqC-e9VPURUaBgKc7kN6HxFs/exec';
 var cur='cb499',qty=1;
 function fmt(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+'đ'}
 function ship(){return (cur==='cb499'||COMBOS[cur].price*qty>=500000)?0:30000}
