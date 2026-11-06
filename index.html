@@ -283,7 +283,7 @@ try{
 var _ic=false;
 function fireIC(){if(_ic)return;_ic=true;try{fbq('track','InitiateCheckout',{content_ids:[cur],value:COMBOS[cur].price*qty,currency:'VND'})}catch(e){}}
 document.querySelectorAll('a[href="#dathang"]').forEach(function(a){a.addEventListener('click',fireIC)});
-document.querySelectorAll('#orderForm input,#orderForm textarea').forEach(function(i){i.addEventListener('focus',fireIC)});
+document.querySelectorAll('form input,form textarea').forEach(function(i){i.addEventListener('focus',fireIC)});
 </script>
 <script>pick('cb499');</script>
 </body></html>
