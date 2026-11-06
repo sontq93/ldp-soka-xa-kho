@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Đặt hàng thành công — Soka U.S.A Pharma</title>
+<meta name="theme-color" content="#0b6b3a">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Be Vietnam Pro',system-ui,sans-serif;background:#f6f1e7;color:#20312a;padding:22px 14px 40px}
+.card{max-width:560px;margin:6vh auto 0;background:#fff;border-radius:22px;padding:30px 24px;box-shadow:0 14px 40px rgba(11,60,35,.14);text-align:center}
+.ok{width:74px;height:74px;border-radius:50%;background:#0b6b3a;color:#fff;font-size:38px;line-height:74px;margin:0 auto 14px}
+h1{font-size:25px;margin-bottom:8px}
+.code{display:inline-block;background:#eef7f1;border:1px dashed #0b6b3a;color:#0b6b3a;font-weight:800;border-radius:10px;padding:7px 16px;margin:8px 0 14px;font-size:17px}
+p{font-size:15.5px;line-height:1.6;color:#42564c}
+.hl{color:#0b6b3a;font-weight:700}
+.btn{display:block;text-decoration:none;border-radius:14px;padding:15px;font-weight:800;font-size:16px;margin-top:12px}
+.zl{background:#0a6cff;color:#fff}
+.fb{background:#1877f2;color:#fff}
+.call{background:#fff;border:2px solid #0b6b3a;color:#0b6b3a}
+.back{display:inline-block;margin-top:18px;color:#5c7268;font-size:14px}
+.small{font-size:13px;color:#7d8f86;margin-top:16px}
+</style></head><body>
+<div class="card">
+<div class="ok">✓</div>
+<h1>Đặt hàng thành công!</h1>
+<div class="code">Mã đơn: <span id="code">—</span></div>
+<p>Cảm ơn bạn đã đặt hàng tại <b>Soka U.S.A Pharma</b>.<br>Nhân viên Soka sẽ <span class="hl">gọi lại số <span id="phone">của bạn</span></span> để xác nhận đơn — bạn <span class="hl">để ý điện thoại</span> giúp shop nhé (khung giờ làm việc 8h–21h).</p>
+<p style="margin-top:10px">Muốn được tư vấn và hỗ trợ sớm hơn? Nhắn cho Soka qua:</p>
+<a class="btn zl" href="https://zalo.me/0778551111">💬 Nhắn Zalo Soka ngay</a>
+<a class="btn fb" href="https://m.me/sokausapharma.official">📘 Nhắn qua Fanpage Soka</a>
+<a class="btn call" href="tel:0778551111">📞 Gọi hotline 0778 551 111</a>
+<p class="small">Thanh toán COD khi nhận hàng — được kiểm tra hàng trước khi trả tiền.</p>
+<a class="back" href="index.html">← Quay lại trang xả kho</a>
+</div>
+<script>
+var q=new URLSearchParams(location.search);
+if(q.get('code'))document.getElementById('code').textContent=q.get('code');
+if(q.get('phone'))document.getElementById('phone').textContent=q.get('phone');
+</script>
+</body></html>
