@@ -158,7 +158,7 @@ footer{padding:20px 18px;color:#7a877d;font-size:13px;text-align:center}
 <details><summary>Vì sao giảm sâu như vậy?</summary><p>Xả kho cuối năm ở mức thu hồi vốn, chỉ tới 23:59 ngày 11/11/2026 hoặc khi hết hàng.</p></details>
 <details><summary>Hạn dùng còn bao lâu?</summary><p>Nhân viên xác nhận trực tiếp hạn dùng của lô hàng với bạn trước khi chốt đơn. Không đồng ý thì không cần đặt.</p></details>
 <details><summary>Được kiểm tra hàng không?</summary><p>Được. Nhận hàng, kiểm tra đúng sản phẩm rồi mới thanh toán COD.</p></details>
-<details><summary>Ship bao nhiêu?</summary><p>Miễn phí ship cho đơn từ 500.000đ. Đơn dưới 500.000đ phí 30.000đ — form bên dưới tự tính cho bạn.</p></details>
+<details><summary>Ship bao nhiêu?</summary><p>Miễn phí ship cho đơn từ 500.000đ — riêng Combo Cân Bằng 499k cũng được miễn phí ship theo chương trình xả kho. Đơn còn lại dưới 500.000đ phí 30.000đ, form bên dưới tự tính cho bạn.</p></details>
 </section>
 <section id="dathang"><div class="ordercard"><h2>📝 Điền thông tin mua hàng</h2><p class="sub2">Điền xong bấm nút vàng — đơn tự chuyển qua Zalo Soka để nhân viên xác nhận và chốt. Không cần trả tiền trước.</p>
 <div class="qtyrow"><span style="font-weight:700;color:#fff">Số lượng combo:</span><button class="qtybtn" type="button" onclick="chQty(-1)">−</button><span class="qtyval" id="qtyVal">1</span><button class="qtybtn" type="button" onclick="chQty(1)">+</button></div>
@@ -188,7 +188,7 @@ var COMBOS={
 };
 var cur='cb499',qty=1;
 function fmt(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+'đ'}
-function ship(){return COMBOS[cur].price*qty>=500000?0:30000}
+function ship(){return (cur==='cb499'||COMBOS[cur].price*qty>=500000)?0:30000}
 function render(){
   var sub=COMBOS[cur].price*qty,sh=ship(),tot=sub+sh;
   document.getElementById('qtyVal').textContent=qty;
