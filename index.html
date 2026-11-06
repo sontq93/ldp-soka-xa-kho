@@ -121,7 +121,15 @@ footer{padding:20px 18px;color:#74848d;font-size:13px;text-align:center}
  .ordercard form input[name=diachi],.ordercard form textarea,.ordercard form .totrow,.ordercard form button.go,.ordercard form .err,.ordercard form .toast,.ordercard form .note{grid-column:1/-1}
  .sticky{max-width:1400px;left:50%;transform:translateX(-50%);border-radius:16px 16px 0 0}
 }
-</style></head><body><div class="wrap">
+</style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','28973683765621012');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=28973683765621012&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code --></head><body><div class="wrap">
 <div class="topbar">🔥 XẢ KHO CUỐI NĂM — kết thúc sau <b id="cd">...</b></div>
 <div class="hero"><span class="badge">SOKA U.S.A PHARMA — BÁN THU HỒI VỐN</span>
 <h1>Xả kho <span class="hl">Meso + Sủi</span>: trong uống, ngoài thoa — giá thu hồi vốn</h1>
@@ -264,11 +272,18 @@ function datHang(e){
   }
   if(!RECEIVER){fallback();return false}
   fetch(RECEIVER,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
-    .then(function(){location.href='cam-on.html?code='+code+'&phone='+encodeURIComponent(payload.phone)})
+    .then(function(){location.href='cam-on.html?code='+code+'&phone='+encodeURIComponent(payload.phone)+'&total='+tot})
     .catch(function(){fallback()});
   return false;
 }
 render();
+try{
+  fbq('track','ViewContent',{content_name:COMBOS[cur].name,content_ids:[cur],content_type:'product',value:COMBOS[cur].price,currency:'VND'});
+}catch(e){}
+var _ic=false;
+function fireIC(){if(_ic)return;_ic=true;try{fbq('track','InitiateCheckout',{content_ids:[cur],value:COMBOS[cur].price*qty,currency:'VND'})}catch(e){}}
+document.querySelectorAll('a[href="#dathang"]').forEach(function(a){a.addEventListener('click',fireIC)});
+document.querySelectorAll('#orderForm input,#orderForm textarea').forEach(function(i){i.addEventListener('focus',fireIC)});
 </script>
 <script>pick('cb499');</script>
 </body></html>
