@@ -79,6 +79,11 @@ summary{font-weight:700;cursor:pointer}
 .ordercard{background:#0b3049;border-radius:20px;padding:18px 16px;color:#e6f1f8}
 .ordercard h2{color:#fff}
 .ordercard .sub2{color:#bcd6ea}
+.omodal{position:fixed;inset:0;background:rgba(3,22,36,.74);z-index:300;display:none;padding:10px;overflow-y:auto}
+.omodal.open{display:block}
+.obox{max-width:560px;margin:4vh auto;position:relative}
+.obox .ordercard{box-shadow:0 18px 50px rgba(0,0,0,.5)}
+.oclose{position:absolute;top:-12px;right:-4px;width:38px;height:38px;border-radius:50%;border:none;background:#fff;color:#0b3049;font-size:18px;font-weight:800;cursor:pointer;z-index:2;box-shadow:0 4px 14px rgba(0,0,0,.35);line-height:1}
 .formtrust{text-align:center;color:#dceefb;font-size:13.5px;margin:2px 0 12px}
 .qtyrow{display:flex;align-items:center;gap:12px;margin:10px 0 14px}
 .qtybtn{width:46px;height:46px;border-radius:12px;border:0;background:#fff;color:#12679e;font-size:22px;font-weight:800;cursor:pointer}
@@ -146,7 +151,7 @@ fbq('track','PageView');
 <p class="rate"><b>4,8/5</b> từ <b>119 đánh giá</b> trên web Soka · Đã bán <b>288 hộp Meso</b> + <b>521 tuýp Sủi</b></p></div>
 <div class="herogrid"><figure class="heroimg"><img src="https://sontq93.github.io/ldp-soka-xa-kho/img/hero.webp" alt="Combo Meso và viên sủi Soka" fetchpriority="high"></figure>
 <div class="heroside"><div class="price"><span class="old">980.000đ</span><span class="new">499.000đ</span><span class="save">TIẾT KIỆM 49%</span></div>
-<a class="cta" href="#dathang">🛒 ĐẶT HÀNG — NHẬN HÀNG MỚI TRẢ TIỀN</a>
+<a class="cta" href="#dathang" onclick="return openOrder()">🛒 ĐẶT HÀNG — NHẬN HÀNG MỚI TRẢ TIỀN</a>
 <a class="cta2" href="#combo">Xem gói quà tặng ↓</a>
 <div class="chips"><span class="chip">🚚 Miễn phí ship toàn quốc</span><span class="chip">📦 Kiểm tra hàng trước khi trả tiền</span><span class="chip">💵 COD toàn quốc</span><span class="chip">🏭 Hàng chính hãng Soka</span></div>
 <div class="heropoints"><p>Kem dưỡng ẩm Meso 30gr — dùng sáng và tối mỗi ngày</p><p>Quà tặng kèm: viên sủi Vitamin C + Đông Trùng Hạ Thảo — mỗi tuýp dùng 20 ngày</p><p>Hàng có sẵn tại kho Hà Đông — đặt hôm nay, đóng gói gửi đi ngay</p></div></div></div>
@@ -236,7 +241,8 @@ fbq('track','PageView');
 </form></div></section>
 <footer>Công ty TNHH Thương mại và Thiết bị Y tế Soka U.S.A Pharma<br>G12 Khu Đấu Giá Ngô Thì Nhậm, Hà Đông, Hà Nội · Hotline 0778 551 111<br>Giá xả kho áp dụng tới 23:59 ngày 11/11/2026.</footer>
 </div>
-<div class="sticky"><div class="sp"><div class="a">Tổng COD</div><div class="b" id="stickyPrice">—</div></div><a class="go2" href="#dathang">ĐẶT HÀNG NGAY</a><a class="zl" href="https://zalo.me/0778551111">💬</a></div>
+<div class="sticky"><div class="sp"><div class="a">Tổng COD</div><div class="b" id="stickyPrice">—</div></div><a class="go2" href="#dathang" onclick="return openOrder()">ĐẶT HÀNG NGAY</a><a class="zl" href="https://zalo.me/0778551111">💬</a></div>
+<div class="omodal" id="omodal" onclick="if(event.target===this)closeOrder()"><div class="obox"><button class="oclose" type="button" onclick="closeOrder()" aria-label="Đóng">✕</button><div id="oSlot"></div></div></div>
 <script>
 var COMBOS={
  cb399:{name:'Mua 1 Meso - TANG 1 Sui',label:'1 Meso — tặng 1 Sủi',price:399000},
@@ -295,6 +301,8 @@ try{
 var _ic=false;
 function fireIC(){if(_ic)return;_ic=true;try{fbq('track','InitiateCheckout',{content_ids:[cur],value:COMBOS[cur].price*qty,currency:'VND'})}catch(e){}}
 document.querySelectorAll('a[href="#dathang"]').forEach(function(a){a.addEventListener('click',fireIC)});
+function openOrder(){var c=document.querySelector('#dathang .ordercard');if(!c)return false;document.getElementById('oSlot').appendChild(c);var m=document.getElementById('omodal');m.classList.add('open');m.scrollTop=0;document.body.style.overflow='hidden';fireIC();return false;}
+function closeOrder(){var c=document.querySelector('#oSlot .ordercard');if(c)document.getElementById('dathang').appendChild(c);document.getElementById('omodal').classList.remove('open');document.body.style.overflow='';}
 document.querySelectorAll('form input,form textarea').forEach(function(i){i.addEventListener('focus',fireIC)});
 </script>
 <script>pick('cb499');</script>
