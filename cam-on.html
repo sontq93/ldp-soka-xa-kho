@@ -49,6 +49,6 @@ fbq('track','PageView');
 var q=new URLSearchParams(location.search);
 if(q.get('code'))document.getElementById('code').textContent=q.get('code');
 if(q.get('phone'))document.getElementById('phone').textContent=q.get('phone');
-var _t=parseInt(q.get('total')||'0',10);if(_t>0){try{fbq('track','Lead',{value:_t,currency:'VND'})}catch(e){}}
+var _t=parseInt(q.get('total')||'0',10);if(_t>0){try{fbq('track','Lead',{value:_t,currency:'VND'});fbq('track','Purchase',{value:_t,currency:'VND'})}catch(e){}}
 </script>
 </body></html>
