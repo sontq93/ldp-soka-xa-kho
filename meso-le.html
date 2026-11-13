@@ -88,10 +88,11 @@ summary{font-weight:700;cursor:pointer}
 .qtyrow{display:flex;align-items:center;gap:12px;margin:10px 0 14px}
 .qtybtn{width:46px;height:46px;border-radius:12px;border:0;background:#fff;color:#12679e;font-size:22px;font-weight:800;cursor:pointer}
 .qtyval{font-size:20px;font-weight:800;min-width:34px;text-align:center;color:#fff}
-form{display:grid;gap:10px}
-input,textarea{width:100%;font-size:16px;padding:14px 12px;border:1px solid #c3d6e2;border-radius:12px;background:#fff;color:#16232e}
+form{display:grid;gap:10px;grid-template-columns:minmax(0,1fr)}
+form>*{min-width:0}
+input,textarea{width:100%;max-width:100%;box-sizing:border-box;font-size:16px;padding:14px 12px;border:1px solid #c3d6e2;border-radius:12px;background:#fff;color:#16232e}
 .totrow{display:flex;justify-content:space-between;align-items:center;font-size:15px;padding:4px 2px;color:#d6e8f4}
-.totrow select{background:#fff;color:#0b3049;border:none;border-radius:10px;padding:8px 10px;font:inherit;font-size:14px;font-weight:700;max-width:64%}
+.totrow select{background:#fff;color:#0b3049;border:none;border-radius:10px;padding:8px 10px;font:inherit;font-size:14px;font-weight:700;max-width:62%;min-width:0;box-sizing:border-box}
 .totrow.grand{font-size:19px;font-weight:800;color:#fff;border-top:1px dashed #2a5d80;margin-top:6px;padding-top:10px}
 button.go{min-height:56px;border:0;border-radius:14px;background:#e8a33d;color:#2a1d00;font-size:18px;font-weight:800;cursor:pointer;width:100%}
 .err{display:none;color:#ffb4ab;font-size:14px}
@@ -128,7 +129,7 @@ footer{padding:20px 18px;color:#74848d;font-size:13px;text-align:center}
  .split{grid-template-columns:1fr 1fr}
  .gal{grid-template-columns:repeat(6,1fr)}
  .ordercard{padding:26px 28px}
- .ordercard form{grid-template-columns:1fr 1fr}
+ .ordercard form{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
  .ordercard form input[name=diachi],.ordercard form textarea,.ordercard form .totrow,.ordercard form button.go,.ordercard form .err,.ordercard form .toast,.ordercard form .note{grid-column:1/-1}
  .sticky{max-width:1400px;left:50%;transform:translateX(-50%);border-radius:16px 16px 0 0}
 }
@@ -231,7 +232,7 @@ fbq('track','PageView');
 <input name="sdt" required placeholder="Số điện thoại *" inputmode="tel" autocomplete="tel">
 <input name="diachi" required placeholder="Địa chỉ nhận hàng (số nhà, đường, phường/xã, quận/huyện, tỉnh) *" autocomplete="street-address">
 <textarea name="ghichu" rows="2" placeholder="Ghi chú thêm (giờ giao hàng, yêu cầu khác...)"></textarea>
-<div class="totrow"><span>Gói đã chọn</span><select id="rComboSel" onchange="pick(this.value)" aria-label="Chọn gói"><option value="cb399">1 Meso — tặng 1 Sủi · 399.000đ</option><option value="cb499">1 Meso — tặng 3 Sủi · 499.000đ — bán chạy nhất</option><option value="cb899">2 Meso — tặng 6 Sủi · 899.000đ</option><option value="cb1299">3 Meso — tặng 10 Sủi · 1.299.000đ</option></select></div>
+<div class="totrow"><span>Gói đã chọn</span><select id="rComboSel" onchange="pick(this.value)" aria-label="Chọn gói"><option value="cb399">1 Meso · tặng 1 Sủi · 399k</option><option value="cb499">1 Meso · tặng 3 Sủi · 499k (bán chạy)</option><option value="cb899">2 Meso · tặng 6 Sủi · 899k</option><option value="cb1299">3 Meso · tặng 10 Sủi · 1.299k</option></select></div>
 <div class="totrow"><span>Tạm tính</span><span id="rSub">—</span></div>
 <div class="totrow"><span>Phí ship</span><span id="rShip">—</span></div>
 <div class="totrow grand"><span>TỔNG THANH TOÁN (COD)</span><span id="rTot">—</span></div>
