@@ -146,7 +146,7 @@ fbq('track','PageView');
 <script>
 (function(h,o,t,j,a,r){h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};h._hjSettings={hjid:6847630,hjsv:6};a=o.getElementsByTagName("head")[0];r=o.createElement("script");r.async=1;r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;a.appendChild(r);})(window,document,"https://static.hotjar.com/c/hotjar-",".js?sv=");
 </script></head><body><div class="wrap">
-<div class="topbar">🔥 XẢ KHO CUỐI NĂM — kết thúc sau <b id="cd">...</b></div>
+<div class="topbar">🔥 XẢ KHO CUỐI NĂM — GIÁ THU HỒI VỐN · ÁP DỤNG ĐẾN KHI HẾT HÀNG</div>
 <div class="hero"><span class="badge">SOKA U.S.A PHARMA — BÁN THU HỒI VỐN</span>
 <h1>Mua <span class="hl">1 Meso</span> chỉ 399k — <span class="hl">TẶNG 1 tuýp Sủi</span></h1>
 <div class="stars">★★★★★</div>
@@ -217,7 +217,7 @@ fbq('track','PageView');
 </div>
 <p class="note">Đọc chi tiết đánh giá tại <a href="https://soka-shop.vercel.app">soka-shop.vercel.app</a></p></section>
 <section><h2>Câu hỏi thường gặp</h2>
-<details><summary>Vì sao giảm sâu như vậy?</summary><p>Xả kho cuối năm ở mức thu hồi vốn, chỉ tới 23:59 ngày 11/11/2026 hoặc khi hết hàng.</p></details>
+<details><summary>Vì sao giảm sâu như vậy?</summary><p>Xả kho cuối năm ở mức thu hồi vốn, áp dụng đến khi hết hàng.</p></details>
 <details><summary>Hàng có chính hãng không?</summary><p>Glow Lux Diamond Meso do BIG FOREST sản xuất, Multivitamin C Plus là sản phẩm của Soka U.S.A Pharma — phân phối trực tiếp từ công ty, có hóa đơn và tem nhãn đầy đủ trên từng hộp. Bạn được kiểm tra hàng trước khi thanh toán.</p></details>
 <details><summary>Được kiểm tra hàng không?</summary><p>Được. Nhận hàng, kiểm tra đúng sản phẩm rồi mới thanh toán COD.</p></details>
 <details><summary>Meso này có phải đi tiêm không?</summary><p>Không. Glow Lux Diamond Meso là kem dưỡng ẩm dùng ngoài da — thoa sáng và tối như kem dưỡng thông thường, không tiêm, không xâm lấn, dùng tại nhà.</p></details>
@@ -241,7 +241,7 @@ fbq('track','PageView');
 <p class="note" style="color:#bcd6ea">Hoặc gọi thẳng <b>0778 551 111</b> để đặt qua điện thoại. Nhân viên Soka sẽ gọi lại xác nhận đơn trong giờ làm việc (8h–21h).</p>
 <div class="toast" id="toast"></div>
 </form></div></section>
-<footer>Công ty TNHH Thương mại và Thiết bị Y tế Soka U.S.A Pharma<br>G12 Khu Đấu Giá Ngô Thì Nhậm, Hà Đông, Hà Nội · Hotline 0778 551 111<br>Giá xả kho áp dụng tới 23:59 ngày 11/11/2026.</footer>
+<footer>Công ty TNHH Thương mại và Thiết bị Y tế Soka U.S.A Pharma<br>G12 Khu Đấu Giá Ngô Thì Nhậm, Hà Đông, Hà Nội · Hotline 0778 551 111<br>Giá xả kho áp dụng đến khi hết hàng.</footer>
 </div>
 <div class="sticky"><div class="sp"><div class="a">Tổng COD</div><div class="b" id="stickyPrice">—</div></div><a class="go2" href="#dathang" onclick="return openOrder()">ĐẶT HÀNG NGAY</a><a class="zl" href="https://zalo.me/0778551111">💬</a></div>
 <div class="omodal" id="omodal" onclick="if(event.target===this)closeOrder()"><div class="obox"><button class="oclose" type="button" onclick="closeOrder()" aria-label="Đóng">✕</button><div id="oSlot"></div></div></div>
@@ -269,12 +269,6 @@ function render(){
 function pick(id){cur=id;render()}
 function chQty(d){qty=Math.min(20,Math.max(1,qty+d));render()}
 document.querySelectorAll('.combo input').forEach(function(i){i.addEventListener('change',function(){pick(i.value)})});
-function tick(){
-  var end=new Date('2026-11-11T23:59:59+07:00').getTime();var t=Math.max(0,end-Date.now());
-  var d=Math.floor(t/86400000),h=Math.floor(t%86400000/3600000),m=Math.floor(t%3600000/60000),s=Math.floor(t%60000/1000);
-  document.getElementById('cd').textContent=d+' ngày '+String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
-}
-tick();setInterval(tick,1000);
 function datHang(e){
   e.preventDefault();var f=e.target;
   var err=document.getElementById('err');
